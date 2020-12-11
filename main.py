@@ -26,9 +26,9 @@ async def crear_usuario(usuario: usuario_data):
 
 #https://sprint-2-12.herokuapp.com/user/{username}
 @api.get("/user/{userdocument}")
-async def listar_usuario(document_user: int):
+async def listar_usuario(userdocument: int):
     
-    usuario = get_user(document_user)
+    usuario = get_user(userdocument)
     
     if usuario == None:
         raise HTTPException(status_code=404, detail="El usuario no existe")
