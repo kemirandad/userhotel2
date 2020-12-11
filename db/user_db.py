@@ -4,7 +4,7 @@ from pydantic import BaseModel, EmailStr
 generador = {"id":2}
 
 class usuario_data(BaseModel):
-    id: Optional[int] = 0
+    #id: Optional[int] = 0
     username: str
     usersurname: str
     userdocument: int
@@ -51,7 +51,7 @@ def create_user(new_user: usuario_data):
     if  new_user.userdocument in user_database.keys():
         return None
     else:
-        generador["id"] = generador["id"] + 1
-        new_user.id = generador["id"]
+        #generador["id"] = generador["id"] + 1
+        #new_user.id = generador["id"]
         user_database[new_user.userdocument] = new_user
         return new_user
